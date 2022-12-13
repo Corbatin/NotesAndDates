@@ -14,8 +14,6 @@ def Database():
 
     return [mycursor, connection]
 
-evento1 = ['1', 'Leaves', 'P', 'REC', 1, '2023', 'Discreta', 'estudiar discreta', '2300', '2330' ]
-
 def modificacion_evento(evento):
     db = Database()
 
@@ -24,4 +22,3 @@ def modificacion_evento(evento):
     db[0].execute(sql, actualizacion)
     db[1].commit()
 
-modificacion_evento(evento1)
