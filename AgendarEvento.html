@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">    
+    <link href="./style.css" rel="stylesheet">
+    <title>Agendar evento</title>
+</head>
+
+<body style="background-color:aqua;">
+    <h1>Agendar evento</h1>
+    <form>
+        <label for="EVE_NOMBRE">Nombre del evento</label>
+        <input type="text" id="EVE_NOMBRE" name="Nombre del evento" ><br> <br>
+        
+        <label for="teve">Tipo de evento:</label>
+        <select name="TEvento" id="teve"> 
+            <option value="Reunion">Reunion</option>
+            <option value="Cumpleaños">Cumpleaños</option>
+            <option value="Recordatorio">Recordatorio</option>
+            <option value="Clase">Clase</option>
+        </select>    <br> <br>
+
+
+        <label for="mod">Elija una modalidad:</label>
+        <select name="modalidad" id="mod"> 
+            <option value="Virtual">Virtual</option>
+            <option value="Presencial">Presencial</option>
+            <option value="Hibrida">Hibrida</option>
+
+
+        
+        
+        </select> <br> <br>
+
+        <label for="fecha">Elija una Hora</label> 
+        <input type="datetime-local" id="birthdaytime" name="birthdaytime"> <br> <br>   
+
+        <label for = "EVE_DESC" >Descripcion</label>
+        <input type="text" id="EVE_DESC" name="Descripcion del evento"><br> <br>
+         
+        <input type="submit" value="Registrar evento" href = test.html>
+
+    </form>
+
+</body>
+
+</html>

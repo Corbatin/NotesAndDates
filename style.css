@@ -1,0 +1,16 @@
+
+@font-face{
+    font-family: Ubuntu;
+    src: url(font/Ubuntu)
+}
+
+body {font-family:Ubuntu;}
+
+h1{
+    font-size: xx-large;
+}
+
+label
+{
+   font-size: lar
+}
