@@ -11,7 +11,6 @@ def Database():
 
 print("Conexion establecida correctamente")
 sys.stdout.flush()
-
 mycursor = connection.cursor()
 return [mycursor, connection]
 
