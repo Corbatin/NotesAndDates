@@ -1,4 +1,5 @@
 import pymysql 
+import sys
 
 def Database():
     connection = pymysql.connect(
@@ -14,11 +15,7 @@ def Database():
 
     return mycursor
 
-credencial = ['Admin2BM', 'BMINGSW02', 'A', 'A']
-credencial2 = ['Leaves', 'stick2022', 'U', 'A']
 
-
-def ControlDeAcceso(credencial):
     db = Database()   
     sql = 'SELECT * FROM Cuenta WHERE Cuenta.CUE_ID = %s and Cuenta.CUE_PASS = %s and Cuenta.CUE_TUSER = %s and Cuenta.CUE_ESTADO = %s '
 
@@ -51,7 +48,4 @@ def ControlDeAcceso(credencial):
             
 
      
-
-
-
-ControlDeAcceso(credencial2)     
+sys.stdout.flush()   
