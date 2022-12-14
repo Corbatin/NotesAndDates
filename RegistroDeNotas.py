@@ -1,4 +1,5 @@
 import pymysql
+import sys
 
 def Database():
     connection = pymysql.connect(
@@ -8,23 +9,15 @@ def Database():
         db='Notes&Dates'
     )
 
-    print("Conexion establecida correctamente")
+print("Conexion establecida correctamente")
+sys.stdout.flush()
 
-    mycursor = connection.cursor()
+mycursor = connection.cursor()
+return [mycursor, connection]
 
-    return [mycursor, connection]
+db = Database()
+sql = 'INSERT INTO Nota VALUES(%s,%s,%s,%s)'
+db[0].execute(sql,nota)
+db[1].commit()
 
-
-nota1= ['21', 'Leaves', 'Ensayar stay', 'Tocar con uñeta' ]
-
-
-def RegistroDeNota(nota):
-
-    db = Database()
-
-
-    sql = 'INSERT INTO Nota VALUES(%s,%s,%s,%s)'
-    db[0].execute(sql,nota)
-    db[1].commit()
-
-RegistroDeNota(nota1)
+sys.stdout.flush()
