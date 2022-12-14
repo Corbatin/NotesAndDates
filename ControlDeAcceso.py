@@ -10,6 +10,7 @@ def Database():
     )
 
     print("Conexion establecida correctamente")
+    sys.stdout.flush()
 
     mycursor = connection.cursor()
 
@@ -22,16 +23,19 @@ db.execute(sql,credencial)
 tuser = db.fetchall()
 
 for user in tuser:
-    print("ID ",user[0]) 
-    print("NOMBRE: ",user[1])   
-    print("TUSER:  ",user[2])  
-
-
+    print("ID ",user[0])
+    sys.stdout.flush()
+    print("NOMBRE: ",user[1])
+    sys.stdout.flush()
+    print("TUSER:  ",user[2])
+    sys.stdout.flush()
     if credencial[2] == 'A':
         print("ADMIN")
+        sys.stdout.flush()
         return 'A'
     if credencial[2] == 'U':
-        print("user") 
+        print("user")
+        sys.stdout.flush()
         return 'U'   
         #for atts in user:
         #    print("epico")
