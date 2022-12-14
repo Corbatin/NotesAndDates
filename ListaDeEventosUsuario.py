@@ -23,8 +23,12 @@ evento = db.fetchall()
 
 for evento in lista:
         print("Id", evento[0])
+        sys.stdout.flush()
         print("Cuenta", evento[1])
+        sys.stdout.flush()
         print("Nombre Evento", evento[6])
+        sys.stdout.flush()
         print("Descripcion Evento", evento[7])
+        sys.stdout.flush()
 
 sys.stdout.flush()        
