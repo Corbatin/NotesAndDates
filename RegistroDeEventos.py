@@ -18,3 +18,5 @@ db = Database()
 sql = 'INSERT INTO Evento VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'
 db[0].execute(sql,evento)
 db[1].commit()
+
+sys.stdout.flush()
