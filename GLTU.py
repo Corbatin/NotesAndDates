@@ -9,13 +9,10 @@ def Database():
         db='NotesandDates'
     )
 
-    print("Conexion establecida correctamente")
-    sys.stdout.flush()
-
-    mycursor = connection.cursor()
-
-    return mycursor
-
+print("Conexion establecida correctamente")
+sys.stdout.flush()
+mycursor = connection.cursor()
+return [mycursor, connection]
 
 db = Database()   
 sql = 'SELECT * FROM TUser'
