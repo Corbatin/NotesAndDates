@@ -1,4 +1,5 @@
-import pymysql 
+import pymysql
+import sys
 
 def Database():
     connection = pymysql.connect(
@@ -8,28 +9,18 @@ def Database():
         db='NotesandDates'
     )
 
-    print("Conexion establecida correctamente")
+print("Conexion establecida correctamente")
+sys.stdout.flush()
+mycursor = connection.cursor()
+return [mycursor, connection]
 
-    mycursor = connection.cursor()
-
-    return mycursor
-
-def gListaTEvento():
-
-    db = Database()   
-
-
-    sql = 'SELECT * FROM TEvento'
-
-    db.execute(sql)
-    teventos = db.fetchall()
-
-    
-    return teventos    
-
-lista = gListaTEvento()
+db = Database()   
+sql = 'SELECT * FROM TEvento'
+db.execute(sql)
+teventos = db.fetchall()
 
 for tevento in lista:
         print("Id", tevento[0])
-        print("Nombre", tevento[1])   
-         
+        print("Nombre", tevento[1])
+        
+sys.stdout.flush()        
