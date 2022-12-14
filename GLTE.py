@@ -8,16 +8,13 @@ def Database():
         db='NotesandDates'
     )
 
-    print("Conexion establecida correctamente")
-
-    mycursor = connection.cursor()
-    return mycursor
-
+print("Conexion establecida correctamente")
+sys.stdout.flush()
+mycursor = connection.cursor()
+eturn [mycursor, connection]
 
 db = Database()   
-
 sql = 'SELECT * FROM Estado'
-
 db.execute(sql)
 Estados = db.fetchall()  
 
