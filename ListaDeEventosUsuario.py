@@ -9,12 +9,10 @@ def Database():
         db='Notes&Dates'
     )
 
-    print("Conexion establecida correctamente")
-    sys.stdout.flush()
-
-    mycursor = connection.cursor()
-    return mycursor
-
+print("Conexion establecida correctamente")
+sys.stdout.flush()
+mycursor = connection.cursor()
+return [mycursor, connection]
 
 db = Database()
 sql = 'SELECT * FROM Evento,Cuenta WHERE Cuenta.CUE_ID = Evento.EVE_CUENTA AND EVE_CUENTA = %s'
