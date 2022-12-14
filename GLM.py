@@ -1,4 +1,5 @@
 import pymysql 
+import sys
 
 def Database():
     connection = pymysql.connect(
@@ -11,21 +12,13 @@ def Database():
     print("Conexion establecida correctamente")
 
     mycursor = connection.cursor()
-
     return mycursor
 
-def gListaModalidad():
-
-    db = Database()   
-
-
-    sql = 'SELECT * FROM Modalidad'
-
-    db.execute(sql)
-    Modalidades = db.fetchall()
-
-    
-    return Modalidades   
+db = Database()   
+sql = 'SELECT * FROM Modalidad'
+db.execute(sql)
+Modalidades = db.fetchall()    
+     
 
 lista = gListaModalidad()
 
