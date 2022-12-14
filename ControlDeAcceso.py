@@ -9,12 +9,10 @@ def Database():
         db='NotesandDates'
     )
 
-    print("Conexion establecida correctamente")
-    sys.stdout.flush()
-
-    mycursor = connection.cursor()
-
-    return mycursor
+print("Conexion establecida correctamente")
+sys.stdout.flush()
+mycursor = connection.cursor()
+return [mycursor, connection]
 
 db = Database()   
 sql = 'SELECT * FROM Cuenta WHERE Cuenta.CUE_ID = %s and Cuenta.CUE_PASS = %s and Cuenta.CUE_TUSER = %s and Cuenta.CUE_ESTADO = %s '
@@ -49,6 +47,4 @@ for user in tuser:
         #        print("Usuario tipo usuario")
         #        return 'U'    
             
-
-     
 sys.stdout.flush()   
