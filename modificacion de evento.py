@@ -11,10 +11,8 @@ def Database():
 
 print("Conexion establecida correctamente")
 sys.stdout.flush()
-
 mycursor = connection.cursor()
 return [mycursor, connection]
-
 
 db = Database()
 actualizacion = [evento[2], evento[3], evento[4], evento[5], evento[6], evento[7], evento[8], evento[9], evento[0]]
