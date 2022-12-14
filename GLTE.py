@@ -1,5 +1,5 @@
 import pymysql 
-
+import sys
 def Database():
     connection = pymysql.connect(
         host='localhost',
@@ -11,22 +11,20 @@ def Database():
     print("Conexion establecida correctamente")
 
     mycursor = connection.cursor()
-
     return mycursor
 
-def gListaTEstados():
 
-    db = Database()   
+db = Database()   
 
-    sql = 'SELECT * FROM Estado'
+sql = 'SELECT * FROM Estado'
 
-    db.execute(sql)
-    Estados = db.fetchall()
-
-    return Estados    
-
-lista = gListaTEstados()
+db.execute(sql)
+Estados = db.fetchall()  
 
 for estado in lista:
         print("ID", estado[0])
-        print("Nombre", estado[1])   
+        sys.stdout.flush()
+        print("Nombre", estado[1])
+        sys.stdout.flush()
+        
+sys.stdout.flush()
