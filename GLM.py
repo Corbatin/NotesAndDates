@@ -10,6 +10,7 @@ def Database():
     )
 
     print("Conexion establecida correctamente")
+    sys.stdout.flush()
 
     mycursor = connection.cursor()
     return mycursor
@@ -20,8 +21,8 @@ db.execute(sql)
 Modalidades = db.fetchall()    
      
 
-lista = gListaModalidad()
-
 for modalidad in lista:
         print("ID", modalidad[0])
-        print("Nombre", modalidad[1])   
+        sys.stdout.flush()
+        print("Nombre", modalidad[1])
+        sys.stdout.flush()
